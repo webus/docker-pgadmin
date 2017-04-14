@@ -1,0 +1,12 @@
+version: '2'
+services:
+  db:
+    image: postgres:9.6
+    environment:
+      - POSTGRES_PASSWORD=demo
+  admin:
+    build: pgadmin4
+    stdin_open: true
+    tty: true
+    ports:
+      - "5050:5050"
